@@ -1,14 +1,14 @@
 import React,{useEffect, useState} from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+//this function will update or edit data in the database
 const Update = () => {
     const[id,setId]=useState(0);
     const[name,setName]=useState("");
     const[position,setPosition]=useState("");
     const[email,setEmail]=useState("");
     const navigate =useNavigate();
-
+//here we used useEffect to get data from teh locasl storage.
     useEffect(()=>{
        setId( localStorage.getItem("id"));
        setName( localStorage.getItem("name"));
