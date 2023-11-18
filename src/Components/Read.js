@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Read = () => {
     const[data,setData]=useState([]);
+    // in this function we will get data from api. 
     function getData(){
         axios
         .get("https://6552be335449cfda0f2dc8c4.mockapi.io/users")
@@ -20,6 +21,7 @@ const Read = () => {
         });
         
     }
+    // through this function we will delete our data from the api by using id. 
     function handleDelete(id){
         axios.delete(`https://6552be335449cfda0f2dc8c4.mockapi.io/users/${id}`)
         .then(()=>{
@@ -66,6 +68,7 @@ const Read = () => {
                 
                 </tr>
             </thead>
+     {/* here we will map the data into the table */}
             {data.map((eachData)=>{
                     return(
                         <>
